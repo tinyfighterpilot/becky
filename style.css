@@ -21,15 +21,23 @@
 /* Add a gray background color with some padding */
 body {
   font-family: avenir;
-  padding: 20px;
+  padding: 10px 20px;
   background: #f1f1f1;
 }
-
-/* Header/Blog Title */
-.titlebar{
-  width: 100%;
+.bar{
   height: 150px;
+  display: flex;
+  flex-wrap: nowrap;
+  background-image: url("imgs/CutstoneSandTile1.webp");
+  background-size: 100%;
+  background-repeat: no-repeat;
+
 }
+.link{
+  padding: 10px;
+}
+/* Header/Blog Title */
+
 .heading{
     width: 100%;
 }
