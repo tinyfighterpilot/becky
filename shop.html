@@ -2,46 +2,64 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="style.css">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="shop.css">
+
+
 </head>
 <body>
 
-<a href="shop.html">Shop</a>
+<a href="index.html">Home</a>
 <a href="cart.html">Cart</a>
-<img class="heading" src="img/Minimal Ease.png">
+<h1>Welcome to the shop!</h1>
+<img class="heading" src="Minimal Ease.png">
 <div class="row">
   <div class="leftcolumn">
-    <div class="card">
-      <h2>Minimal Ease</h2>
+    <div class="card" type="add" id="plusButton" >
+      <h2>Product 1</h2>
       <h5>Simple Steps to Great Success</h5>
       <div class="fakeimg" style="height:200px;">Image</div>
-      <p>Some text..</p>
-      <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+      <p>Product description $10</p>
+      <button class="fa fa-plus" onclick="addItem(10);"></button>
+      <p>blah blah blah </p>
     </div>
     <div class="card">
-      <h2>TITLE HEADING</h2>
+      <h2>Product 3</h2>
       <h5>Title description, Sep 2, 2017</h5>
       <div class="fakeimg" style="height:200px;">Image</div>
-      <p>Some text..</p>
-      <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+      <p>Product description $15</p>
+      <button class="fa fa-plus" onclick="addItem(15);"></button>
+      <p>blah blah blah </p>
     </div>
   </div>
   <div class="rightcolumn">
     <div class="card">
-      <h2>About Me</h2>
+      <h2>Product 2</h2>
       <div class="fakeimg" style="height:100px;">Image</div>
-      <p>Some text about me in culpa qui officia deserunt mollit anim..</p>
+      <p>Product description $20</p>
+      <button class="fa fa-plus" onclick="addItem(20);"></button>
+      <p>blah blah blah </p>
     </div>
     <div class="card">
-      <h3>Popular Post</h3>
+      <h3>Product 4</h3>
       <div class="fakeimg">Image</div><br>
       <div class="fakeimg">Image</div><br>
       <div class="fakeimg">Image</div>
+      
+
+      <p>Product description $25</p>
+      <button class="fa fa-plus" id="plus" onclick="addItem(25);"></button>
+      <span></span>
+      <button class="fa fa-minus"></button>
+      <p>blah blah blah </p>
     </div>
     <div class="card">
-      <h3>About Me</h3>
-      <p>blah blah blah</p>
+      <h3>Follow Me</h3>
+      <p>Some text..</p>
+      
       
     </div>
   </div>
@@ -61,6 +79,6 @@
   </a>
   </div>
 </div>
-
+<script src="cart.js" defer></script>
 </body>
 </html>

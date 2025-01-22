@@ -1,0 +1,10 @@
+.leftcolumn{
+    width: 50%;
+}
+.rightcolumn{
+    width:50%;
+}
+.card:hover{
+    background-color: #f3f3f3;
+    box-shadow: 10px 10px 10px #888888;
+}

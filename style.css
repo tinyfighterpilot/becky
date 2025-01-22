@@ -1,7 +1,5 @@
 
-* {
-  box-sizing: border-box;
-}
+
 @font-face{
   font-family: "avenir";
   src: url("fonts/avenir-next-free-alternatives-1737391361-0/AvenirNextLTPro-Regular.otf") format("opentype");;
@@ -19,23 +17,18 @@
   src: url("fonts/ostrich-sans/OstrichSans-Medium.otf") format("opentype");
 }
 /* Add a gray background color with some padding */
+
+* {
+  box-sizing: border-box;
+}
+
+/* Add a gray background color with some padding */
 body {
-  font-family: avenir;
-  padding: 10px 20px;
+  font-family:fantasy;
+  padding: 20px;
   background: #f1f1f1;
 }
-.bar{
-  height: 150px;
-  display: flex;
-  flex-wrap: nowrap;
-  background-image: url("imgs/CutstoneSandTile1.webp");
-  background-size: 100%;
-  background-repeat: no-repeat;
 
-}
-.link{
-  padding: 10px;
-}
 /* Header/Blog Title */
 
 .heading{
@@ -91,4 +84,55 @@ body {
     width: 100%;
     padding: 0;
   }
+}
+
+.fa-paypal {
+  background-color:rgb(178, 178, 240);
+  border-radius: 15px;
+  text-decoration: none;
+  padding: 10px;
+}
+
+.fa-paypal:hover{
+  background-color: #e0dde9;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+  transition: all 0.1s ease-in-out;
+  
+}
+.fa-instagram {
+  background: #b90b0b;
+  color: white;
+  padding: 10px;
+  text-decoration: none;
+  border-radius: 15px;
+}
+.fa-instagram:hover{
+  background-color: #d80000;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+  text-decoration: none;
+  transition: all 0.1s ease-in-out;
+}
+.fa-youtube{
+  background: rgb(222, 219, 219);
+  color: #c70c0c;
+  padding: 10px;
+  text-decoration: none;
+  border-radius: 15px;
+}
+.fa-youtube:hover{
+  background-color: #f0eeee;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+  text-decoration: none;
+  transition: all 0.1s ease-in-out;
+}
+.socials {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 25px;
+  padding-top: 20px;
+  margin-bottom: 40px;
+  font-size:36px;
+} 
+a{
+  padding-inline: 5px;
 }
