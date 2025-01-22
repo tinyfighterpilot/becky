@@ -34,7 +34,16 @@ body {
 .heading{
     width: 100%;
 }
-
+.links{
+  background-image: url("imgs\sand.png");
+  background-size: cover;
+  width:100%;
+  height: 150px;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  padding: 20px;
+}
 /* Create two unequal columns that floats next to each other */
 /* Left column */
 .leftcolumn {   
