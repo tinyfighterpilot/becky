@@ -1,10 +1,15 @@
 .leftcolumn{
-    width: 50%;
+    width: 35%;
+    margin-left: 15%;
 }
 .rightcolumn{
-    width:50%;
+    width:35%;
 }
 .card:hover{
-    background-color: #f3f3f3;
+    background-color: #d6d5d5;
     box-shadow: 10px 10px 10px #888888;
+    transform: scale(105%);
+}
+.row{
+    margin-top: 5%;
 }

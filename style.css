@@ -10,7 +10,7 @@
 }
 @font-face{
   font-family: "cinzel";
-  src: url("fonts/cinzel/Cinzel-Regular.otf") format("opentype");
+  src: url("fonts/cinzel/CinzelDecorative-Regular.otf") format("opentype");
 }
 @font-face{
   font-family: "goudy";
@@ -33,12 +33,15 @@
 .top:hover{
   background-color: rgb(245, 241, 236);
   transform: scale(110%);
-  box-shadow: 1px 1px 1px;
+  box-shadow: 2px 2px 2px rgb(80, 80, 80);
 }
 * {
   box-sizing: border-box;
+}.welcome{
+  margin-left: 40%;
+  position: absolute;
+  font-family: cinzel;
 }
-
 /* Add a gray background color with some padding */
 body {
   font-family:"avenir-demi";
@@ -55,9 +58,12 @@ h2{
     width: 100%;
 }
 .links{
-  background-image: url("imgs/sand.jpg");
+  /*background-image: url("imgs/sand.jpg");*/
+  background-color:#f7ce81;
   background-size: cover;
   width:100%;
+  border-top-left-radius:  10px;
+  border-top-right-radius:  10px;
   height: 110px;
   display: flex;
   justify-content: left;
@@ -104,6 +110,8 @@ img {
   text-align: center;
   background: #ddd;
   margin-top: 20px;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
 }
 
 /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
