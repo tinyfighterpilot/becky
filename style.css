@@ -133,7 +133,7 @@ img {
   background-color: #e0dde9;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
   transition: all 0.1s ease-in-out;
-  
+  transform: scale(120%);
 }
 .fa-instagram {
   background: #b90b0b;
@@ -147,11 +147,13 @@ img {
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
   text-decoration: none;
   transition: all 0.1s ease-in-out;
+  transform: scale(120%);
 }
 .fa-youtube{
   background: rgb(222, 219, 219);
   color: #c70c0c;
-  padding: 10px;
+  padding-block: 10px;
+  padding-inline: 5px;
   text-decoration: none;
   border-radius: 15px;
 }
@@ -160,6 +162,7 @@ img {
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
   text-decoration: none;
   transition: all 0.1s ease-in-out;
+  transform: scale(120%);
 }
 .socials {
   display: flex;
@@ -169,6 +172,7 @@ img {
   margin-bottom: 40px;
   font-size:36px;
 } 
+
 a{
   padding-inline: 5px;
 }
