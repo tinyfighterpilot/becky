@@ -60,6 +60,7 @@ function updateProductVisibility(productId, isVisible) {
 }
 
 // On page load (for cart.html)
+// On page load (for cart.html)
 window.onload = function () {
     console.log("Page loaded. Generating product divs..."); // Debugging
     updateCart();
@@ -70,14 +71,32 @@ window.onload = function () {
             const productDiv = document.createElement("div");
             productDiv.id = `p${product.id}`;
             productDiv.style.display = "none"; // Start with all products hidden
-            productDiv.innerHTML = `
-                <img src="${product.image}" alt="${product.name}">
-                <div class="product-info">
-                    <h3>${product.name}</h3>
-                    <p>$${product.price.toFixed(2)}</p>
-                    <button class="remove-button" onclick="removeItem(${product.price}, ${product.id})">Remove</button>
-                </div>
-            `;
+
+            const img = document.createElement('img');
+            img.src = product.image;
+            img.alt = product.name;
+
+            const productInfo = document.createElement('div');
+            productInfo.className = 'product-info';
+
+            const h3 = document.createElement('h3');
+            h3.textContent = product.name;
+
+            const p = document.createElement('p');
+            p.textContent = `$${product.price.toFixed(2)}`;
+
+            const removeButton = document.createElement('button');
+            removeButton.className = 'remove-button';
+            removeButton.textContent = 'Remove';
+            removeButton.addEventListener('click', () => removeItem(product.price, product.id));
+
+            productInfo.appendChild(h3);
+            productInfo.appendChild(p);
+            productInfo.appendChild(removeButton);
+
+            productDiv.appendChild(img);
+            productDiv.appendChild(productInfo);
+
             productContainer.appendChild(productDiv);
             console.log(`Generated div for product ID: p${product.id}`); // Debugging
         });
@@ -90,3 +109,63 @@ window.onload = function () {
         });
     }
 };
+
+paypal.Buttons({
+    style: {
+        layout: 'horizontal'
+    },
+
+    // Call your server to set up the transaction
+    //called on click, my server returns orderID
+    createOrder: function(data, actions) {
+        return fetch('/demo/checkout/api/paypal/order/create/', {
+            method: 'post'
+        }).then(function(res) {
+            return res.json();
+        }).then(function(orderData) {
+            return orderData.id;
+        });
+    },
+
+    // Call your server to finalize the transaction
+    //after user approves payment
+    onApprove: function(data, actions) {
+        return fetch('/demo/checkout/api/paypal/order/' + data.orderID + '/capture/', {
+            method: 'post'
+        }).then(function(res) {
+            return res.json();
+        }).then(function(orderData) {
+            // Three cases to handle:
+            //   (1) Recoverable INSTRUMENT_DECLINED -> call actions.restart()
+            //   (2) Other non-recoverable errors -> Show a failure message
+            //   (3) Successful transaction -> Show confirmation or thank you
+
+            // This example reads a v2/checkout/orders capture response, propagated from the server
+            // You could use a different API or structure for your 'orderData'
+            var errorDetail = Array.isArray(orderData.details) && orderData.details[0];
+
+            if (errorDetail && errorDetail.issue === 'INSTRUMENT_DECLINED') {
+                return actions.restart(); // Recoverable state, per:
+                // https://developer.paypal.com/docs/checkout/integration-features/funding-failure/
+            }
+
+            if (errorDetail) {
+                var msg = 'Sorry, your transaction could not be processed.';
+                if (errorDetail.description) msg += '\n\n' + errorDetail.description;
+                if (orderData.debug_id) msg += ' (' + orderData.debug_id + ')';
+                return alert(msg); // Show a failure message (try to avoid alerts in production environments)
+            }
+
+            // Successful capture! For demo purposes:
+            console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
+            var transaction = orderData.purchase_units[0].payments.captures[0];
+            alert('Transaction '+ transaction.status + ': ' + transaction.id + '\n\nSee console for all available details');
+
+            // Replace the above to show a success message within this page, e.g.
+            // const element = document.getElementById('paypal-button-container');
+            // element.innerHTML = '';
+            // element.innerHTML = '<h3>Thank you for your payment!</h3>';
+            // Or go to another URL:  actions.redirect('thank_you.html');
+        });
+    }
+}).render('#paypal-button-container');
