@@ -35,6 +35,6 @@
 .remove-button:hover {
     background-color: #ff1a1a;
 }
-#paypal-button-container{
-    margin-left: 10%;
+#paypal-button-stuff{
+    margin-inline: 30%;
 }

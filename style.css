@@ -2,27 +2,28 @@
 
 @font-face{
   font-family: "avenir-demi";
-  src: url("fonts/avenir-next-free-alternatives-1737391361-0/AvenirNextLTPro-Demi.otf") format("opentype");
+  src: url("../fonts/avenir-next-free-alternatives-1737391361-0/AvenirNextLTPro-Demi.otf") format("opentype");
 }
 @font-face{
   font-family: "avenir-medium";
-  src: url("fonts/avenir-next-free-alternatives-1737391361-0/AvenirNextLTPro-Regular.otf") format("opentype");
+  src: url("../fonts/avenir-next-free-alternatives-1737391361-0/AvenirNextLTPro-Regular.otf") format("opentype");
 }
 @font-face{
   font-family: "cinzel";
-  src: url("fonts/cinzel/CinzelDecorative-Regular.otf") format("opentype");
+  src: url("../fonts/cinzel/CinzelDecorative-Regular.otf") format("opentype");
 }
 @font-face{
   font-family: "goudy";
-  src: url("fonts/Goudy Old Style Regular/Goudy Old Style Regular.ttf") format("opentype");
+  src: url("../fonts/Goudy Old Style Regular/Goudy Old Style Regular.ttf") format("opentype");
 }
 @font-face{
   font-family: "ostrich";
-  src: url("fonts/ostrich-sans/OstrichSans-Medium.otf") format("opentype");
+  src: url("../fonts/ostrich-sans/OstrichSans-Medium.otf") format("opentype");
 }
 /* Add a gray background color with some padding */
 .top{
-  background-color: rgb(250, 243, 236);
+  background: rgb(235,218,160);
+  background: linear-gradient(90deg, rgb(244, 232, 194) 100%, rgba(245,219,120,1) 80%);
   font-size:larger;
   color: black;
   text-decoration: none;
@@ -40,7 +41,8 @@
 }.welcome{
   margin-left: 40%;
   position: absolute;
-  font-family: cinzel;
+  font-family: "avenir-medium";
+  font-size: 240%;
 }
 /* Add a gray background color with some padding */
 body {
@@ -48,7 +50,7 @@ body {
   padding: 20px;
   background: #f1f1f1;
 }
-h2{
+h1,h2,h3,h4,h5,p{
   font-family: "avenir-medium";
 
 }
@@ -122,15 +124,15 @@ img {
   }
 }
 
-.fa-paypal {
-  background-color:rgb(178, 178, 240);
+.fa-facebook {
+  background-color:rgb(255, 255, 255);
   border-radius: 15px;
   text-decoration: none;
-  padding: 10px;
+  padding: 15px;
 }
 
-.fa-paypal:hover{
-  background-color: #e0dde9;
+.fa-facebook:hover{
+  background-color: #f2eeff;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
   transition: all 0.1s ease-in-out;
   transform: scale(120%);
@@ -138,7 +140,7 @@ img {
 .fa-instagram {
   background: #b90b0b;
   color: white;
-  padding: 10px;
+  padding: 15px;
   text-decoration: none;
   border-radius: 15px;
 }
@@ -152,8 +154,8 @@ img {
 .fa-youtube{
   background: rgb(222, 219, 219);
   color: #c70c0c;
-  padding-block: 10px;
-  padding-inline: 5px;
+  padding-block: 15px;
+  padding-inline:10px;
   text-decoration: none;
   border-radius: 15px;
 }
@@ -175,4 +177,8 @@ img {
 
 a{
   padding-inline: 5px;
+}
+.link:hover{
+  transform: scale(102%);
+  border-radius: 10px;
 }

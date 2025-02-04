@@ -13,3 +13,12 @@
 .row{
     margin-top: 5%;
 }
+button{
+    background-color: rgb(237, 224, 174);
+    padding: 8px;
+    border-radius: 10px;
+}
+button:hover{
+    transform: scale(110%);
+    background-color: rgb(255, 250, 234);
+}

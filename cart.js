@@ -1,12 +1,12 @@
 let total = parseFloat(localStorage.getItem('cartTotal')) || 0;
 
 const products = [
-    { id: 1, name: "4 Zones of Decluttering", price: 5.00, image: "imgs/YouTube.png" },
-    { id: 2, name: "Do I Need This?", price: 1.50, image: "imgs/Do I Really Need This.jpg" },
-    { id: 3, name: "Decluttering Check-in", price: 3.00, image: "imgs/YouTube (1).png" },
-    { id: 4, name: "ADHD Daily Journal", price: 10.00, image: "imgs/page 1.png" },
-    { id: 5, name: "200 Things to Declutter", price: 2.50, image: "imgs/200.png" },
-    { id: 6, name: "Capsule Wardrobe", price: 3.00, image: "imgs/winter.png" }
+    { id: 1, name: "4 Zones of Decluttering", price: 5.00, image: "../imgs/YouTube.png" },
+    { id: 2, name: "Do I Need This?", price: 1.50, image: "../imgs/Do I Really Need This.jpg" },
+    { id: 3, name: "Decluttering Check-in", price: 3.00, image: "../imgs/YouTube (1).png" },
+    { id: 4, name: "ADHD Daily Journal", price: 10.00, image: "../imgs/page 1.png" },
+    { id: 5, name: "200 Things to Declutter", price: 2.50, image: "../imgs/200.png" },
+    { id: 6, name: "Capsule Wardrobe", price: 3.00, image: "../imgs/winter.png" }
 ];
 
 // Add item to cart
