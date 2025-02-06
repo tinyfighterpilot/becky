@@ -2,15 +2,21 @@ import express from "express";
 import fetch from "node-fetch";
 import "dotenv/config";
 import path from "path";
+import { fileURLToPath } from "url";
 
+// Convert the module URL to a file path
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+// Load environment variables
 const { PAYPAL_CLIENT_ID, PAYPAL_CLIENT_SECRET, PORT = 8888 } = process.env;
-const base = "https://api-m.sandbox.paypal.com";
+const base = "https://api-m.sandbox.paypal.com"; // PayPal Sandbox API base URL
 const app = express();
 
-// host static files
-app.use(express.static("client"));
+// Host static files from the "client" directory
+app.use(express.static(path.join(__dirname, "client")));
 
-// parse post params sent in body in json format
+// Parse JSON request bodies
 app.use(express.json());
 
 /**
@@ -45,9 +51,9 @@ const generateAccessToken = async () => {
  * @see https://developer.paypal.com/docs/api/orders/v2/#orders_create
  */
 const createOrder = async (cart) => {
-  // use the cart information passed from the front-end to calculate the purchase unit details
+  // Use the cart information passed from the front-end to calculate the purchase unit details
   console.log(
-    "shopping cart information passed from the frontend createOrder() callback:",
+    "Shopping cart information passed from the frontend createOrder() callback:",
     cart,
   );
 
@@ -59,7 +65,7 @@ const createOrder = async (cart) => {
       {
         amount: {
           currency_code: "USD",
-          value: "100.00",
+          value: "100.00", // Replace with dynamic value from the cart
         },
       },
     ],
@@ -106,6 +112,9 @@ const captureOrder = async (orderID) => {
   return handleResponse(response);
 };
 
+/**
+ * Handle API responses.
+ */
 async function handleResponse(response) {
   try {
     const jsonResponse = await response.json();
@@ -119,9 +128,9 @@ async function handleResponse(response) {
   }
 }
 
+// API endpoint to create an order
 app.post("/api/orders", async (req, res) => {
   try {
-    // use the cart information passed from the front-end to calculate the order amount detals
     const { cart } = req.body;
     const { jsonResponse, httpStatusCode } = await createOrder(cart);
     res.status(httpStatusCode).json(jsonResponse);
@@ -131,22 +140,29 @@ app.post("/api/orders", async (req, res) => {
   }
 });
 
+// API endpoint to capture an order
 app.post("/api/orders/:orderID/capture", async (req, res) => {
   try {
     const { orderID } = req.params;
     const { jsonResponse, httpStatusCode } = await captureOrder(orderID);
     res.status(httpStatusCode).json(jsonResponse);
   } catch (error) {
-    console.error("Failed to create order:", error);
+    console.error("Failed to capture order:", error);
     res.status(500).json({ error: "Failed to capture order." });
   }
 });
 
-// serve index.html
+// Serve cart.html for the root route
 app.get("/", (req, res) => {
-  res.sendFile(path.resolve("./client/checkout.html"));
+  res.sendFile(path.join(__dirname, "client", "cart.html"));
 });
 
+// Serve shop.html for the /shop route
+app.get("/shop", (req, res) => {
+  res.sendFile(path.join(__dirname, "client", "shop.html"));
+});
+
+// Start the server
 app.listen(PORT, () => {
   console.log(`Node server listening at http://localhost:${PORT}/`);
 });
