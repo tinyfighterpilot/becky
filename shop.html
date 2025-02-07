@@ -5,14 +5,17 @@
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="shop.css">
-
+<script src="https://www.paypalobjects.com/ncp/cart/cart.js" data-merchant-id="GFLTB5PSXQJ5Q"></script>
 
 </head>
 <body>
   <div class="links">
-      <a class="top" href="https://minimaleaseliving.com/index.html">Home</a>
-      <a class="top" href="https://minimaleaseliving.com/checkout.pay/client/shop.html">Shop</a>
-      <a class="top" href="https://minimaleaseliving.com/checkout.pay/client/cart.html">Cart</a>
+      <a class="top" href="index.html">Home</a>
+      <a class="top" href="shop.html">Shop</a>
+      <paypal-cart-button data-id="pp-view-cart"></paypal-cart-button>
+        <script>
+          cartPaypal.Cart({ id: "pp-view-cart" })
+        </script>
     <h1 class="welcome">Welcome to the shop!</h1>
   </div>
 
@@ -26,44 +29,45 @@
       <p>Zone Everything in Your Home into the Simple 4 Zones!</p>
       <button class="fa fa-plus" onclick="addItem(5.00, 1);"> Add to Cart</button>
       <p> Price: $5.00</p>
+      
     </div>
+
     <div class="card">
       <h2>Do I Need This?</h2>
       <h5>Print and Laminate! Easy Checklist Before You Buy Things You Don't Really Need!</h5>
       <img src="imgs/Do I Really Need This.jpg">
       <p>Price: $1.50</p>
-      <button class="fa fa-plus" onclick="addItem(1.50, 2);"> Add to cart</button>
-      <p></p>
+      
     </div>
+
   </div>
+
   <div class="rightcolumn">
     <div class="card">
       <h2>Decluttering Check-in</h2>
       <h5>Helpful Tool to  Keep Track of Your Decluttering Journey!</h5>
       <img src="imgs/YouTube (1).png">
       <p>Price: $3.00</p>
-      <button class="fa fa-plus" onclick="addItem(3.00, 3);"> Add to Cart</button>
-      <p></p>
+      
     </div>
+
     <div class="card">
       <h2>ADHD Daily Journal</h2>
       <h5>ADHD-Friendly Cleaning & Decluttering Tracker </h5>
       <img src="imgs/page 1.png">
       <p>Price $10.00</p>
-      <button class="fa fa-plus" onclick="addItem(10.00, 4);">Add to Cart</button>
-      <span></span>
-      
-     
+       
     </div>
     
   </div>
+
   <div class="leftcolumn">
     <div class="card">
       <h2>200 Things to Declutter</h2>
       <h5>Are you tired of the clutter in your home? Are you ready to reclaim your space and find peace in your surroundings? Look no further than our 200 Things to Declutter guide! This comprehensive list covers all areas of your home, from the kitchen to the garage, and provides you with a step-by-step plan to declutter and organize. Say goodbye to the items that no longer serve you and create a space that brings you joy and calm. Get your copy of 200 Things to Declutter and start your journey to a clutter-free home today!</h5>
       <img src="../imgs/200.png">
       <p>Price: $2.50</p>
-      <button class="fa fa-plus" onclick="addItem(2.50, 5);">Add to Cart</button>
+      
     </div>
   </div>
   <div class="rightcolumn">
@@ -72,10 +76,16 @@
       <h5>Learn how to create a curated capsule wardrobe with your existing clothing. Through this ebook you will be able to examine your current clothing, create capsules for each season, and create a monthly schedule to build in days to declutter your unneeded clothing. </h5>
       <img src="imgs/winter.png">
       <p>Price: $3.00</p>
-      <button class="fa fa-plus" onclick="addItem(3.00, 6);">Add to Cart</button>
+      
     </div>
+
   </div>
+
 </div>
+  <paypal-add-to-cart-button data-id="QDU7AHVU7N288"></paypal-add-to-cart-button>
+    <script>
+      cartPaypal.AddToCart({ id: "QDU7AHVU7N288" })
+    </script>
 
 <div class="footer">
   <h2>Socials!</h2>
