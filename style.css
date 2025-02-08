@@ -195,4 +195,6 @@ a{
 .link:hover{
   transform: scale(102%);
   border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.3); 
+  opacity: 0.8;
 }
