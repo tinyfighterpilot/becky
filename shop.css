@@ -1,24 +1,59 @@
-.leftcolumn{
+.leftcolumn {
     width: 35%;
     margin-left: 15%;
 }
-.rightcolumn{
-    width:35%;
+
+.rightcolumn {
+    width: 35%;
 }
-.card:hover{
+
+.card:hover {
     background-color: #d6d5d5;
     box-shadow: 10px 10px 10px #888888;
     transform: scale(105%);
 }
-.row{
+
+.row {
     margin-top: 5%;
 }
-button{
+
+button {
     background-color: rgb(237, 224, 174);
     padding: 8px;
     border-radius: 10px;
 }
-button:hover{
-    transform: scale(110%);
-    background-color: rgb(255, 250, 234);
+
+button:hover {
+    background-color: rgb(233, 189, 47);
+}
+
+@media only screen and (max-width: 850px) {
+    .shop {
+        padding: 5px;
+    }
+    .welcome {
+        color: rgba(0, 128, 0, 0);
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .leftcolumn, .rightcolumn {
+        width: 100%; /* Make both columns take full width */
+        margin-left: 0; /* Remove left margin */
+        float: none; /* Remove floating behavior */
+    }
+
+    body {
+        padding: 20px;
+        margin: 0px;
+    }
+
+    .card {
+        padding: 20px; /* Keep padding for better spacing */
+    }
+}
+@media only screen and (max-width: 500px){
+    body{
+        padding: 0px;
+    }
 }
