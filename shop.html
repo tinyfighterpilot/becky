@@ -40,7 +40,7 @@
         <script>
           cartPaypal.AddToCart({ id: "74G68PSKKSBQ6" });
         </script>
-        <button class="qr" data-qr="imgs/4 Zones of Dec-qrcode.png" data-width="130">Click for QR-code</button>
+        <button class="qr" data-qr="imgs/4 Zones of Dec-qrcode.png" data-paypal-link="https://www.paypal.com/ncp/payment/74G68PSKKSBQ6" data-width="130">Click for QR-code</button>
       </div>
 
       <div class="card">
@@ -51,7 +51,7 @@
         <script>
           cartPaypal.AddToCart({ id: "M8ABE67XS6AYW" });
         </script>
-        <button class="qr" data-qr="imgs/Do I Need  Thi-qrcode.png" data-width="130">Click for QR-code</button>
+        <button class="qr" data-qr="imgs/Do I Need  Thi-qrcode.png" data-paypal-link="https://www.paypal.com/ncp/payment/M8ABE67XS6AYW" data-width="130">Click for QR-code</button>
       </div>
     </div>
 
@@ -64,7 +64,7 @@
         <script>
           cartPaypal.AddToCart({ id: "63M7XZS3B98QU" });
         </script>
-        <button class="qr" data-qr="imgs/Decluttering C-qrcode.png" data-width="130">Click for QR-code</button>
+        <button class="qr" data-qr="imgs/Decluttering C-qrcode.png" data-paypal-link="https://www.paypal.com/ncp/payment/63M7XZS3B98QU" data-width="130">Click for QR-code</button>
       </div>
 
       <div class="card">
@@ -75,7 +75,7 @@
         <script>
           cartPaypal.AddToCart({ id: "XVQT58WYUTB2S" });
         </script>
-        <button class="qr" data-qr="imgs/ADHD Journal-qrcode.png" data-width="120">Click for QR-code</button>
+        <button class="qr" data-qr="imgs/ADHD Journal-qrcode.png" data-paypal-link="https://www.paypal.com/ncp/payment/XVQT58WYUTB2S" data-width="120">Click for QR-code</button>
       </div>
     </div>
 
@@ -88,7 +88,7 @@
         <script>
           cartPaypal.AddToCart({ id: "AL8LMA4LC83PC" });
         </script>
-        <button class="qr" data-qr="imgs/200 Things to -qrcode.png" data-width="130">Click for QR-code</button>
+        <button class="qr" data-qr="imgs/200 Things to -qrcode.png" data-paypal-link="https://www.paypal.com/ncp/payment/AL8LMA4LC83PC" data-width="130">Click for QR-code</button>
       </div>
     </div>
 
@@ -101,7 +101,7 @@
         <script>
           cartPaypal.AddToCart({ id: "BTUHXPYFKDW7C" });
         </script>
-        <button class="qr" data-qr="imgs/Capsule Wardro-qrcode.png" data-width="130">Click for QR-code</button>
+        <button class="qr" data-qr="imgs/Capsule Wardro-qrcode.png" data-paypal-link="https://www.paypal.com/ncp/payment/BTUHXPYFKDW7C" data-width="130">Click for QR-code</button>
       </div>
     </div>
   </div>
@@ -124,7 +124,7 @@
   <script>
     // Get all buttons with the class "qr"
     const qrButtons = document.querySelectorAll('.qr');
-
+  
     // Add a click event listener to each button
     qrButtons.forEach(button => {
       button.addEventListener('click', () => {
@@ -132,22 +132,39 @@
         const qrImagePath = button.getAttribute('data-qr');
         // Get the desired width from the data-width attribute
         const qrWidth = button.getAttribute('data-width');
-
+        // Get the PayPal link from the data-paypal-link attribute
+        const paypalLink = button.getAttribute('data-paypal-link');
+  
         // Create an image element
         const qrImage = document.createElement('img');
         qrImage.src = qrImagePath;
         qrImage.alt = "QR Code";
         qrImage.style.width = `${qrWidth}px`; // Set the width dynamically
         qrImage.style.height = "auto"; // Maintain aspect ratio
-
+  
+        // Create a custom PayPal link
+        const paypalButton = document.createElement('a');
+        paypalButton.href = paypalLink; // Use the PayPal link from the data-paypal-link attribute
+        paypalButton.textContent = 'Buy Now on PayPal'; // Customize the link text
+        paypalButton.style.display = 'block'; // Ensure the link appears on a new line
+        paypalButton.style.margin = '10px'; // Add some spacing
+        paypalButton.style.marginInline = '50px';
+        paypalButton.style.textDecoration = 'none';
+        paypalButton.target = '_blank'; // Open link in a new tab
+  
         // Check if a QR code is already displayed
         const existingQR = button.nextElementSibling;
         if (existingQR && existingQR.tagName === 'IMG') {
-          // If a QR code is already displayed, remove it
+          // If a QR code is already displayed, remove it and the PayPal link
           existingQR.remove();
+          const existingPayPalLink = button.nextElementSibling;
+          if (existingPayPalLink && existingPayPalLink.tagName === 'A') {
+            existingPayPalLink.remove();
+          }
         } else {
-          // Otherwise, display the QR code below the button
+          // Otherwise, display the QR code and the PayPal link below the button
           button.insertAdjacentElement('afterend', qrImage);
+          qrImage.insertAdjacentElement('afterend', paypalButton);
         }
       });
     });
