@@ -1,129 +1,156 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Security-Policy" content="
-  default-src 'self';
-  script-src 'unsafe-inline' https://*.paypal.com https://*.paypalobjects.com 'self';
-  style-src 'unsafe-inline' https://*.paypal.com 'self' https://cdnjs.cloudflare.com;
-  connect-src https://*.paypal.com 'self';
-  frame-src https://*.paypal.com 'self';
-  img-src https://*.paypal.com https://*.paypalobjects.com 'self' data:;
-  font-src 'self' https://cdnjs.cloudflare.com;
-">
-
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="shop.css">
-<script src="https://www.paypalobjects.com/ncp/cart/cart.js" data-merchant-id="GFLTB5PSXQJ5Q"></script>
-<title>Minimal Ease Shop</title>
-<link rel="icon" type="image/x-icon" href="imgs/channels4_profile.jpg">
-
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="
+    default-src 'self';
+    script-src 'unsafe-inline' https://*.paypal.com https://*.paypalobjects.com 'self';
+    style-src 'unsafe-inline' https://*.paypal.com 'self' https://cdnjs.cloudflare.com;
+    connect-src https://*.paypal.com 'self';
+    frame-src https://*.paypal.com 'self';
+    img-src https://*.paypal.com https://*.paypalobjects.com 'self' data:;
+    font-src 'self' https://cdnjs.cloudflare.com;
+  ">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="shop.css">
+  <script src="https://www.paypalobjects.com/ncp/cart/cart.js" data-merchant-id="GFLTB5PSXQJ5Q"></script>
+  <title>Minimal Ease Shop</title>
+  <link rel="icon" type="image/x-icon" href="imgs/channels4_profile.jpg">
 </head>
 <body>
   <div class="links">
-      <a class="top" href="index.html">Home</a>
-      <a class="top" href="shop.html">Shop</a>
-      <paypal-cart-button class="shop" data-id="pp-view-cart"></paypal-cart-button>
-        <script>
-          cartPaypal.Cart({ id: "pp-view-cart" })
-        </script>
+    <a class="top" href="index.html">Home</a>
+    <a class="top" href="shop.html">Shop</a>
+    <paypal-cart-button class="shop" data-id="pp-view-cart"></paypal-cart-button>
+    <script>
+      cartPaypal.Cart({ id: "pp-view-cart" });
+    </script>
     <h1 class="welcome">Welcome to the shop!</h1>
   </div>
 
-<!--img class="heading" src="imgs/Minimal Ease.png"-->
-<div class="row">
-  <div class="leftcolumn">
-    <div class="card" type="add"  >
-      <h2>4 Zones of Decluttering</h2>
-      <h5>Make Organization Easy!</h5>
-      <img src="imgs/YouTube.png">
-      <p>Zone Everything in Your Home into the Simple 4 Zones!</p>
-      <paypal-add-to-cart-button data-id="74G68PSKKSBQ6"></paypal-add-to-cart-button>
+  <div class="row">
+    <div class="leftcolumn">
+      <div class="card" type="add">
+        <h2>4 Zones of Decluttering</h2>
+        <h5>Make Organization Easy!</h5>
+        <img src="imgs/YouTube.png">
+        <p>Zone Everything in Your Home into the Simple 4 Zones!</p>
+        <paypal-add-to-cart-button data-id="74G68PSKKSBQ6"></paypal-add-to-cart-button>
         <script>
-          cartPaypal.AddToCart({ id: "74G68PSKKSBQ6" })
+          cartPaypal.AddToCart({ id: "74G68PSKKSBQ6" });
         </script>
-      
+        <button class="qr" data-qr="imgs/4 Zones of Dec-qrcode.png" data-width="130">Click for QR-code</button>
+      </div>
+
+      <div class="card">
+        <h2>Do I Need This?</h2>
+        <h5>Print and Laminate! Easy Checklist Before You Buy Things You Don't Really Need!</h5>
+        <img src="imgs/Do I Really Need This.jpg">
+        <paypal-add-to-cart-button data-id="M8ABE67XS6AYW"></paypal-add-to-cart-button>
+        <script>
+          cartPaypal.AddToCart({ id: "M8ABE67XS6AYW" });
+        </script>
+        <button class="qr" data-qr="imgs/Do I Need  Thi-qrcode.png" data-width="130">Click for QR-code</button>
+      </div>
     </div>
 
-    <div class="card">
-      <h2>Do I Need This?</h2>
-      <h5>Print and Laminate! Easy Checklist Before You Buy Things You Don't Really Need!</h5>
-      <img src="imgs/Do I Really Need This.jpg">
-      <paypal-add-to-cart-button data-id="M8ABE67XS6AYW"></paypal-add-to-cart-button>
+    <div class="rightcolumn">
+      <div class="card">
+        <h2>Decluttering Check-in</h2>
+        <h5>Helpful Tool to Keep Track of Your Decluttering Journey!</h5>
+        <img src="imgs/YouTube (1).png">
+        <paypal-add-to-cart-button data-id="63M7XZS3B98QU"></paypal-add-to-cart-button>
         <script>
-          cartPaypal.AddToCart({ id: "M8ABE67XS6AYW" })
+          cartPaypal.AddToCart({ id: "63M7XZS3B98QU" });
         </script>
-              
+        <button class="qr" data-qr="imgs/Decluttering C-qrcode.png" data-width="130">Click for QR-code</button>
+      </div>
+
+      <div class="card">
+        <h2>ADHD Daily Journal</h2>
+        <h5>ADHD-Friendly Cleaning & Decluttering Tracker</h5>
+        <img src="imgs/page 1.png">
+        <paypal-add-to-cart-button data-id="XVQT58WYUTB2S"></paypal-add-to-cart-button>
+        <script>
+          cartPaypal.AddToCart({ id: "XVQT58WYUTB2S" });
+        </script>
+        <button class="qr" data-qr="imgs/ADHD Journal-qrcode.png" data-width="120">Click for QR-code</button>
+      </div>
     </div>
 
+    <div class="leftcolumn">
+      <div class="card">
+        <h2>200 Things to Declutter</h2>
+        <h5>Are you tired of the clutter in your home? Are you ready to reclaim your space and find peace in your surroundings? Look no further than our 200 Things to Declutter guide! This comprehensive list covers all areas of your home, from the kitchen to the garage, and provides you with a step-by-step plan to declutter and organize. Say goodbye to the items that no longer serve you and create a space that brings you joy and calm. Get your copy of 200 Things to Declutter and start your journey to a clutter-free home today!</h5>
+        <img src="../imgs/200.png">
+        <paypal-add-to-cart-button data-id="AL8LMA4LC83PC"></paypal-add-to-cart-button>
+        <script>
+          cartPaypal.AddToCart({ id: "AL8LMA4LC83PC" });
+        </script>
+        <button class="qr" data-qr="imgs/200 Things to -qrcode.png" data-width="130">Click for QR-code</button>
+      </div>
+    </div>
+
+    <div class="rightcolumn">
+      <div class="card">
+        <h2>Capsule Wardrobe Create a Curated Wardrobe</h2>
+        <h5>Learn how to create a curated capsule wardrobe with your existing clothing. Through this ebook you will be able to examine your current clothing, create capsules for each season, and create a monthly schedule to build in days to declutter your unneeded clothing.</h5>
+        <img src="imgs/winter.png">
+        <paypal-add-to-cart-button data-id="BTUHXPYFKDW7C"></paypal-add-to-cart-button>
+        <script>
+          cartPaypal.AddToCart({ id: "BTUHXPYFKDW7C" });
+        </script>
+        <button class="qr" data-qr="imgs/Capsule Wardro-qrcode.png" data-width="130">Click for QR-code</button>
+      </div>
+    </div>
   </div>
 
-  <div class="rightcolumn">
-    <div class="card">
-      <h2>Decluttering Check-in</h2>
-      <h5>Helpful Tool to  Keep Track of Your Decluttering Journey!</h5>
-      <img src="imgs/YouTube (1).png">
-      <paypal-add-to-cart-button data-id="63M7XZS3B98QU"></paypal-add-to-cart-button>
-        <script>
-          cartPaypal.AddToCart({ id: "63M7XZS3B98QU" })
-        </script>
-      
-    </div>
-
-    <div class="card">
-      <h2>ADHD Daily Journal</h2>
-      <h5>ADHD-Friendly Cleaning & Decluttering Tracker </h5>
-      <img src="imgs/page 1.png">
-      <paypal-add-to-cart-button data-id="XVQT58WYUTB2S"></paypal-add-to-cart-button>
-      <script>
-        cartPaypal.AddToCart({ id: "XVQT58WYUTB2S" })
-      </script>
-    </div>
-    
-  </div>
-
-  <div class="leftcolumn">
-    <div class="card">
-      <h2>200 Things to Declutter</h2>
-      <h5>Are you tired of the clutter in your home? Are you ready to reclaim your space and find peace in your surroundings? Look no further than our 200 Things to Declutter guide! This comprehensive list covers all areas of your home, from the kitchen to the garage, and provides you with a step-by-step plan to declutter and organize. Say goodbye to the items that no longer serve you and create a space that brings you joy and calm. Get your copy of 200 Things to Declutter and start your journey to a clutter-free home today!</h5>
-      <img src="../imgs/200.png">
-      <paypal-add-to-cart-button data-id="AL8LMA4LC83PC"></paypal-add-to-cart-button>
-        <script>
-          cartPaypal.AddToCart({ id: "AL8LMA4LC83PC" })
-        </script>
-      
+  <div class="footer">
+    <h2>Socials!</h2>
+    <div class="socials">
+      <a href="https://www.instagram.com/minimalease/" target="blank">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="https://www.youtube.com/@minimalease" target="blank">
+        <i class="fab fa-youtube" style="background-color: white;"></i>
+      </a>
+      <a href="https://www.facebook.com/minimalease" target="blank">
+        <i class="fab fa-facebook" style="font-size: 36px; color: #003087;"></i>
+      </a>
     </div>
   </div>
-  <div class="rightcolumn">
-    <div class="card">
-      <h2>Capsule Wardrobe Create a Curated Wardrobe</h2>
-      <h5>Learn how to create a curated capsule wardrobe with your existing clothing. Through this ebook you will be able to examine your current clothing, create capsules for each season, and create a monthly schedule to build in days to declutter your unneeded clothing. </h5>
-      <img src="imgs/winter.png">
-      <paypal-add-to-cart-button data-id="BTUHXPYFKDW7C"></paypal-add-to-cart-button>
-        <script>
-          cartPaypal.AddToCart({ id: "BTUHXPYFKDW7C" })
-        </script>
-    </div>
 
-  </div>
+  <script>
+    // Get all buttons with the class "qr"
+    const qrButtons = document.querySelectorAll('.qr');
 
-</div>
+    // Add a click event listener to each button
+    qrButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        // Get the QR code image path from the data-qr attribute
+        const qrImagePath = button.getAttribute('data-qr');
+        // Get the desired width from the data-width attribute
+        const qrWidth = button.getAttribute('data-width');
 
+        // Create an image element
+        const qrImage = document.createElement('img');
+        qrImage.src = qrImagePath;
+        qrImage.alt = "QR Code";
+        qrImage.style.width = `${qrWidth}px`; // Set the width dynamically
+        qrImage.style.height = "auto"; // Maintain aspect ratio
 
-<div class="footer">
-  <h2>Socials!</h2>
-  <div class="socials">
-    <a href="https://www.instagram.com/minimalease/" target="blank">
-      <i class="fab fa-instagram"></i>
-    </a>
-    <a href="https://www.youtube.com/@minimalease" target="blank">
-      <i class="fab fa-youtube" style="background-color: white;"></i>
-    </a>
-    <a href="https://www.facebook.com/minimalease" target="blank">
-    <i class="fab fa-facebook" style="font-size: 36px; color: #003087;"></i>
-  </a>
-  </div>
-</div>
+        // Check if a QR code is already displayed
+        const existingQR = button.nextElementSibling;
+        if (existingQR && existingQR.tagName === 'IMG') {
+          // If a QR code is already displayed, remove it
+          existingQR.remove();
+        } else {
+          // Otherwise, display the QR code below the button
+          button.insertAdjacentElement('afterend', qrImage);
+        }
+      });
+    });
+  </script>
 </body>
 </html>
