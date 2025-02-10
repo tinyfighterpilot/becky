@@ -10,6 +10,7 @@
     frame-src https://*.paypal.com 'self';
     img-src https://*.paypal.com https://*.paypalobjects.com 'self' data:;
     font-src 'self' https://cdnjs.cloudflare.com;
+    object-src 'self';
   ">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
@@ -71,11 +72,14 @@
         <h2>ADHD Daily Journal</h2>
         <h5>ADHD-Friendly Cleaning & Decluttering Tracker</h5>
         <img src="imgs/page 1.png">
-        <paypal-add-to-cart-button data-id="XVQT58WYUTB2S"></paypal-add-to-cart-button>
-        <script>
+        <!--paypal-add-to-cart-button data-id="XVQT58WYUTB2S"></paypal-add-to-cart-button-->
+        <button onclick="openPdfInNewTab('imgs/ADHD Daily Journal.pdf')">Free Download</button>
+       
+
+        <!--script>
           cartPaypal.AddToCart({ id: "XVQT58WYUTB2S" });
-        </script>
-        <button class="qr" data-qr="imgs/ADHD Journal-qrcode.png" data-paypal-link="https://www.paypal.com/ncp/payment/XVQT58WYUTB2S" data-width="120">Click for QR-code</button>
+        </script-->
+        <!--button class="qr" data-qr="imgs/ADHD Journal-qrcode.png" data-paypal-link="https://www.paypal.com/ncp/payment/XVQT58WYUTB2S" data-width="120">Click for QR-code</button-->
       </div>
     </div>
 
@@ -169,5 +173,6 @@
       });
     });
   </script>
+  <script src="pdf.js"></script>
 </body>
 </html>
